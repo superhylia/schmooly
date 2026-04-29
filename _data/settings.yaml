@@ -26,7 +26,7 @@ theme:
   theme_layout:
     space_scale: 100
   theme_colors:
-    background: '#ffffff'
+    background: '#A0EDDB'
     text: '#101010'
     link: '#542BFF'
     background_dark: '#101010'
