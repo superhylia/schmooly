@@ -9,12 +9,12 @@ config:
 metadata:
   site_url: 'https://schmooly.netlify.app'
   site_title: Schmooly's Portfolio
-  site_subtitle_1: Image Portfolio
-  site_subtitle_2: 'Sometown, CA'
+  site_subtitle_1: ''
+  site_subtitle_2: ''
   site_description: |
     Halide is a customizable Jamstack portfolio website theme designed for photographers and still image creators. Read the docs at [github.com/danurbanowicz/halide](https://github.com/danurbanowicz/halide)
-  site_email: dan.urbanowicz@gmail.com
-  site_social_url: 'https://github.com/danurbanowicz/halide'
+  site_email: ''
+  site_social_url: 'https://bsky.app/profile/schmoolyghoul.bsky.social'
   site_icon_svg: /assets/uploads/favicon.svg
   site_icon_png: ''
   site_ga4_id: ''
