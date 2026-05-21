@@ -145,15 +145,15 @@ export default defineConfig({
             description: "The project's optional additional description, shown under images",
             isBody: true,
           },
-          {
-            type: 'string',
-            label: 'Tags',
-            name: 'tags',
-            list: true,
-            ui: {
+          // {
+          //   type: 'string',
+          //   label: 'Tags',
+          //   name: 'tags',
+          //   list: true,
+          //   ui: {
               
-            }
-          },
+          //   }
+          // },
           {
             type: "number",
             name: "position",
