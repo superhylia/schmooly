@@ -146,6 +146,15 @@ export default defineConfig({
             isBody: true,
           },
           {
+            type: 'string',
+            label: 'Tags',
+            name: 'tags',
+            list: true,
+            ui: {
+              
+            }
+          },
+          {
             type: "number",
             name: "position",
             label: "Project Position",
