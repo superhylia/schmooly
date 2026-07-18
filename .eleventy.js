@@ -48,6 +48,7 @@ export default function(eleventyConfig) {
       src, // throw an error if src is missing
       alt = "",
       classes = "",
+      share = "",
       loadingType = "lazy",
       viewportSizes = "",
       outputWidths = ["1080","1800","2400"],
@@ -103,6 +104,47 @@ export default function(eleventyConfig) {
                     loading="${loadingType}"
                     decoding="async">
               </picture>`;
+  
+  });
+
+  // Shortcode to generate a responsive project image
+  eleventyConfig.addShortcode("generateOGImage", async function(ogimage) {
+
+    // Destructure the paramaters object and set some defaults
+    let {
+      src, // throw an error if src is missing
+      alt = "",
+      outputWidths = ["1280"],
+      outputFormats = ["jpeg"],
+      outputQualityJpeg = 75,
+      outputQualityWebp = 75,
+      outputQualityAvif = 75
+    } = ogimage;
+
+    // Tina CMS prefixes uploaded img src with a forward slash (?)
+    // Remove it from the image path if it exists
+    src = src.startsWith("/") ? src.slice(1) : src;
+
+    let metadata = await Image(src, {
+      widths: outputWidths,
+      sharpJpegOptions: { quality: outputQualityJpeg },
+      sharpWebpOptions: { quality: outputQualityWebp },
+      sharpAvifOptions: { quality: outputQualityAvif },
+      formats: outputFormats,
+      urlPath: "/assets/ogimages/",
+      outputDir: "./_site/assets/ogimages/",
+      // cacheOptions: {
+      //   // If image is a remote URL, this is the amount of time before 11ty fetches a fresh copy
+      //   duration: "5y",
+      //   directory: ".cache",
+      //   removeUrlQueryParams: true,
+      // },
+    });
+
+    let lowsrc = metadata.jpeg[0];
+
+
+    return lowsrc.url;
   
   });
 

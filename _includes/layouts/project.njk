@@ -44,6 +44,7 @@ section: project
           {
             "src": image.src,
             "alt": image.caption or title,
+            "share": image.share,
             "classes": "grid__item grid__item--breakout",
             "loadingType": "eager" if loop.first else "lazy",
             "viewportSizes": "(min-width: 1140px) 70vw, (min-width: 540px) 90vw, 100vw",

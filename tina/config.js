@@ -78,6 +78,12 @@ export default defineConfig({
             description: "The year the project was realized e.g. 2023",
           },
           {
+            type: "boolean",
+            name: "comic",
+            label: "Comic Mode",
+            description: "If this set of images is for a comic, check this for the comic viewer.",
+          },
+          {
             type: "object",
             name: "images",
             label: "Images",
@@ -103,6 +109,31 @@ export default defineConfig({
             ],
           },
           {
+            type: "object",
+            name: "share",
+            label: "Social Share Info",
+            description: "This determines the image and caption displayed (called OpenGraph) when embedded on platforms like Discord and BlueSky.",
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.caption };
+              },
+            },
+            fields: [
+              {
+                type: "image",
+                name: "src",
+                label: "Image",
+                description: "Upload an image in JPEG or PNG format with a minimum width of 2000 pixels.",
+              },
+              {
+                type: "string",
+                name: "caption",
+                label: "Caption",
+                description: "Add a descriptive image caption.",
+              },
+            ],
+          },
+          {
             type: "datetime",
             name: "date",
             label: "Publish Date",
@@ -116,7 +147,8 @@ export default defineConfig({
           {
             type: "object",
             name: "seo",
-            label: "SEO",
+            label: "OPTIONAL: SEO",
+            description: "Separate title, description, and index fields for search engines.",
             fields: [
               {
                 type: "string",
@@ -145,15 +177,15 @@ export default defineConfig({
             description: "The project's optional additional description, shown under images",
             isBody: true,
           },
-          // {
-          //   type: 'string',
-          //   label: 'Tags',
-          //   name: 'tags',
-          //   list: true,
-          //   ui: {
-              
-          //   }
-          // },
+          {
+            type: 'string',
+            label: 'Tags',
+            name: 'tags',
+            list: true,
+            ui: {
+                component: 'tags',
+            }
+          },
           {
             type: "number",
             name: "position",
