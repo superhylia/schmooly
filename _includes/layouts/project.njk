@@ -22,7 +22,9 @@ section: project
 
         {% for tag in tags %}
         <p class="grid__item--span-4 mw--readable mb--0">
-          {{ tag }}
+          {% for tag in tags %}
+            <a href="/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+          {% endfor %}
         </p>
         {% endfor %}
       {% endif %}

@@ -5,8 +5,8 @@
   <meta property="og:title" content="{{ settings.metadata.seo.site_title or settings.metadata.site_title }}" data-helmet>
   <meta property="og:description" content="{{ settings.metadata.seo.site_description or settings.metadata.site_description }}" data-helmet>
 {% else %}
-  <meta property="og:title" content="{{ seo.title or title }}" data-helmet>
-  <meta property="og:description" content="{{ seo.description or description }}" data-helmet>
+  <meta property="og:title" content="{{ seo.title or title }} ({{ year }})" data-helmet>
+  <meta property="og:description" content="{{ share.caption or seo.description or description }}" data-helmet>
   {% if share %}
         {% set ogimage = {"src": share.src} %}
       <meta property="og:image" content="{{ settings.metadata.site_url }}{% generateOGImage ogimage %}">
@@ -25,4 +25,3 @@
 
 <!-- Twitter meta -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#5865F2">

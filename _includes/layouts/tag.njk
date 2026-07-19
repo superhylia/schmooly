@@ -1,0 +1,27 @@
+---
+layout: layouts/tags.njk
+permalink: /tags/{{ tag | slugify }}/index.html
+section: tags
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - projects
+eleventyComputed:
+  title: "Tag: “{{ tag }}”"
+---
+
+<ul class="taglist | my-s-m cluster gutter-s" role="list">
+    {% set taglist = collections[tag] %}
+    {% for project in taglist | reverse %}
+    <li>
+      <a href="{{ project.url | url}}"> {{ project.data.title }}
+      </a>
+    </li>
+    {% else %}
+    <p> No projects exist under this tag. </p>
+  {% endfor %}
+</ul>
