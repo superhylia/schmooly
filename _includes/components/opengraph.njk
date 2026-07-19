@@ -9,7 +9,10 @@
   <meta property="og:description" content="{{ seo.description or description }}" data-helmet>
   {% if share %}
         {% set ogimage = {"src": share.src} %}
-      <meta property="og:image" content="{{ settings.metadata.site_url}}{% generateOGImage ogimage %}">
+      <meta property="og:image" content="{{ settings.metadata.site_url }}{% generateOGImage ogimage %}">
+  {% else %}
+      {% set ogimage = {"src": images[0].src} %}
+          <meta property="og:image" content="{{ settings.metadata.site_url }}{% generateOGImage ogimage %}">
   {% endif %}
 {% endif %}
 

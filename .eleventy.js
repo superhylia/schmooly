@@ -114,7 +114,7 @@ export default function(eleventyConfig) {
     let {
       src, // throw an error if src is missing
       alt = "",
-      outputWidths = ["1280"],
+      outputWidths = ["1200"],
       outputFormats = ["jpeg"],
       outputQualityJpeg = 75,
       outputQualityWebp = 75,
@@ -144,7 +144,7 @@ export default function(eleventyConfig) {
     let lowsrc = metadata.jpeg[0];
 
 
-    return lowsrc.url;
+    return `${lowsrc.url}`;
   
   });
 

@@ -18,6 +18,15 @@ section: project
         </p>
       {% endif %}
 
+      {% if tags %}
+
+        {% for tag in tags %}
+        <p class="grid__item--span-4 mw--readable mb--0">
+          {{ tag }}
+        </p>
+        {% endfor %}
+      {% endif %}
+
     </div>
 
   </header>
