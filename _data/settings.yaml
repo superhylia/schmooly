@@ -5,22 +5,31 @@ config:
   image_width_sm: 1080
   image_width_md: 1800
   image_width_lg: 2400
-  font_stack_system: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+  font_stack_system: >-
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 metadata:
   site_url: 'https://schmooly.netlify.app'
   site_title: Schmooly's Portfolio
   site_subtitle_1: ''
   site_subtitle_2: ''
-  site_description: |
-    Halide is a customizable Jamstack portfolio website theme designed for photographers and still image creators. Read the docs at [github.com/danurbanowicz/halide](https://github.com/danurbanowicz/halide)
+  site_description: >
+    Halide is a customizable Jamstack portfolio website theme designed for
+    photographers and still image creators. Read the docs at
+    [github.com/danurbanowicz/halide](https://github.com/danurbanowicz/halide)
   site_email: ''
-  site_social_url: 'https://bsky.app/profile/schmoolyghoul.bsky.social'
+  site_socials:
+    - label: BlueSky
+      url: 'https://bsky.app/profile/schmoolyghoul.bsky.social'
   site_icon_svg: /assets/uploads/favicon.svg
   site_icon_png: ''
   site_ga4_id: ''
   seo:
     site_title: Halide - Jamstack portfolio theme
-    site_description: 'A customizable, minimalist portfolio website designed for photographers and still image creators.'
+    site_description: >-
+      A customizable, minimalist portfolio website designed for photographers
+      and still image creators.
     no_index: false
 theme:
   theme_layout:

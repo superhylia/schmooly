@@ -1,0 +1,17 @@
+---
+layout: layouts/tags-lo.njk
+permalink: /tags/index.html
+eleventyComputed:
+  title: "Browse All Tags"
+---
+
+<ul class="taglist | my-s-m cluster gutter-s" role="list">
+    {% for tag, tagList in collections %}
+    <li>
+      <a href="/tags/{{ tag | slugify }}"> {{ tag }}
+      </a>
+    </li>
+    {% else %}
+    <p> There are no tags to browse. </p>
+  {% endfor %}
+</ul>

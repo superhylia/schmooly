@@ -14,11 +14,13 @@
       </div>
     {% endif %}
 
-    {% if settings.metadata.site_social_url %}
+    {% if settings.metadata.site_socials %}
       <div class="grid__item">
+        {% for item in settings.metadata.site_socials %}
         <span>
-          <a href="{{ settings.metadata.site_social_url }}" target="_blank" rel="noopener">{{ settings.i18n.site_social_title }}</a>
+          <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.label }}</a>
         </span>
+        {% endfor %}
       </div>
     {% endif %}
 

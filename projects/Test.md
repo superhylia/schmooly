@@ -2,7 +2,7 @@
 draft: false
 title: Los Angeles
 description: |
-  An example project description
+  An example project description asdf
 year: 2021
 position: 2
 images:

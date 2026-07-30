@@ -264,11 +264,36 @@ export default defineConfig({
                 description: "Your website's contact email address, visible in the site footer.",
               },
               {
-                type: "string",
-                name: "site_social_url",
-                label: "Site Social URL",
+                type: "object",
+                name: "site_socials",
+                label: "Site Socials",
+                list: true,
                 description: "Your primary social media profile URL, visible in the site footer e.g. https://instagram.com/johndoe",
+                defaultItem: {
+                  label: "Social Site Here (BlueSky, Twitter, etc.)",
+                  url: "Social Profile URL Here (bsky.app/profile/your_profile_here)"
+                },
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Site Social Label",
+                    description: "Your primary social media profile URL, visible in the site footer e.g. https://instagram.com/johndoe",
+                  },
+                  {
+                    type: "string",
+                    name: "url",
+                    label: "Site Social URL",
+                    description: "Your primary social media profile URL, visible in the site footer e.g. https://instagram.com/johndoe",
+                  },
+                ]
               },
+              
               {
                 type: "image",
                 name: "site_icon_svg",
